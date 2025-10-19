@@ -1,0 +1,22 @@
+CREATE TABLE livros(
+  id int primary key,
+  book_name varchar(200) NOT NULL,
+  publisher varchar(200) NOT NULL,
+  published_date DATE NOT NULL,
+  author varchar(200) NOT NULL,
+  isbn varchar(200) UNIQUE NOT NULL
+);
+
+CREATE TABLE authors (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    author_name VARCHAR(255) NOT NULL,
+    birth_date DATE,
+    nationality VARCHAR(100)
+);
+
+select * from autores;
+select * from livros;
+
+SELECT a.author_name, l.author
+FROM autores a
+JOIN livros l ON a.author_name = l.author;
